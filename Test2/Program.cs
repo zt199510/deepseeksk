@@ -23,7 +23,7 @@ MemoryServerless memoryServerless = kMService.CreateMemoryByApp();
 var importResult = await memoryServerless.ImportDocumentAsync(new Document(fileid).AddFile(req.FilePath)
                                .AddTag(KmsConstantcs.KmsIdTag, req.KmsId)
                            , index: KmsConstantcs.KmsIndex);
-if (importResult=="")
+if (importResult == "")
 {
     Console.WriteLine("Document imported successfully.");
 }
@@ -56,18 +56,20 @@ foreach (var memoryIndex in memories)
 // 输出MemoryServerless实例信息
 Console.WriteLine(memoryServerless);
 
-var searchResult = await kMService.GetRelevantSourceList("溺水防范", KmsConstantcs.KmsIdTag);
+var searchResult = await kMService.GetRelevantSourceList("如何预防儿童溺水", KmsConstantcs.KmsIdTag);
 if (searchResult.Any())
 {
     foreach (var result in searchResult)
     {
-        Console.WriteLine($"相关度: {result.Relevance}");
-        Console.WriteLine($"文档ID: {result.SourceName}");
-        Console.WriteLine($"内容片段: {result.Text}");
-        Console.WriteLine("-------------------");
+        // 可扩展为根据相关度动态显示表情
+        var relevanceEmoji = result.Relevance > 0.7 ? "🔥" : "⚠️";
+        Console.WriteLine($"🎯 {relevanceEmoji} 相关度: {result.Relevance * 100:F2}%");
+        Console.WriteLine($"📁 文档ID: {result.SourceName}");
+        Console.WriteLine($"📜 内容片段: {result.Text}");
+        Console.WriteLine("🌟--------------------🌟");
     }
 }
 else
 {
-    Console.WriteLine("No relevant sources found.");
+    Console.WriteLine("😞 未找到相关资源");
 }
