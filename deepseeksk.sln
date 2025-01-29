@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "deepseeksk", "deepseeksk.csproj", "{EA07F072-7F1C-5760-C782-B6A625BA2353}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA07F072-7F1C-5760-C782-B6A625BA2353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA07F072-7F1C-5760-C782-B6A625BA2353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA07F072-7F1C-5760-C782-B6A625BA2353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA07F072-7F1C-5760-C782-B6A625BA2353}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D379582-4033-45F9-AB81-9A12AFFE83F0}
+	EndGlobalSection
+EndGlobal
