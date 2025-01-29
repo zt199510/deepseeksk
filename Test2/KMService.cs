@@ -33,20 +33,20 @@ public class KMService
         };
 
         // 获取HTTP客户端
-        var chatHttpClient = OpenAIHttpClientHandlerUtil.GetHttpClient("http://abc.ztgametv.cn:10086/");
-        var embeddingHttpClient = OpenAIHttpClientHandlerUtil.GetHttpClient("http://abc.ztgametv.cn:10086/");
+        var chatHttpClient = OpenAIHttpClientHandlerUtil.GetHttpClient("http://你的大模型地址/");
+        var embeddingHttpClient = OpenAIHttpClientHandlerUtil.GetHttpClient("http://你的大模型地址/");
 
         // 构建KernelMemory实例
         var memoryBuild = new KernelMemoryBuilder()
             .WithSearchClientConfig(searchClientConfig)
             .WithOpenAITextGeneration(new OpenAIConfig
             {
-                APIKey = "sk-uxaC405uujdT3CSS828dC75fF89b49B09dFa9a76B13667E3",
+                APIKey = "你的key",
                 TextModel = "gpt-4o-mini" // 使用正确的参数名和模型ID
             }, null, chatHttpClient)
             .WithOpenAITextEmbeddingGeneration(new OpenAIConfig
             {
-                APIKey = "sk-z557jeuF1sNO4Gn6A697895c04A74c76BfFd0e624d218299",
+                APIKey = "你的key",
                 EmbeddingModel = "text-embedding-3-small" // 使用正确的参数名
             }, null, false, embeddingHttpClient)
             .WithSimpleFileStorage(new SimpleFileStorageConfig
