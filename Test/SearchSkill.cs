@@ -19,7 +19,7 @@ public class SearchSkill
 
     public async Task<List<SearchResult>> SearchAsync(
         string query,
-        string queryUrl = "http://ÄãµÄSearchXNGµØÖ·",
+        string queryUrl = "http://abc.ztgametv.cn:8082",
         int count = 10,
         List<string> filterList = null,
         int pageNumber = 1,

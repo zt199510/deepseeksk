@@ -5,14 +5,16 @@ using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.Ollama;
 
 #pragma warning disable SKEXP0010
-var endpoint = new Uri("http://你的ollama地址:11434");
-var modelId = "deepseek-r1:14b";
+
+#pragma warning disable SKEXP0070 
+
+
+var endpoint = new Uri("https://dashscope.aliyuncs.com/compatible-mode/v1");
+var modelId = "qwen-plus";
 var builder = Kernel.CreateBuilder();
 builder.Services.AddScoped<HttpClient>();
 builder.Services.AddScoped<SearchSkill>();
-#pragma warning disable SKEXP0070 
-
-builder.AddOllamaChatCompletion(modelId, endpoint);
+builder.AddOpenAIChatCompletion(modelId, endpoint, "sk-11f8cf7d7ea24d438fe2c7ce01c3edd6");
 var kernel = builder.Build();
 var chatService = kernel.GetRequiredService<IChatCompletionService>();
 var chatHistory = new ChatHistory();
